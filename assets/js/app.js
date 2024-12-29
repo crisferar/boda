@@ -16,6 +16,36 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 2000,
         });
 
+        // Inicializar todos los tooltips en la página
+        const tooltips = document.querySelectorAll('[data-toggle="tooltip"]');
+        tooltips.forEach(function (tooltipElement) {
+            new bootstrap.Tooltip(tooltipElement);
+        });
+
+        // Inicializar el tooltip con opción manual
+        const copyButton = document.getElementById('copyButton');
+        const tooltipInstance = new bootstrap.Tooltip(copyButton, {
+            trigger: 'manual'  // Esto desactiva el comportamiento por hover
+        });
+
+        document.getElementById('copyButton').addEventListener('click', function () {
+            const texto = "ES0915830001169125352225";            
+
+            navigator.clipboard.writeText(texto).then(() => {
+                const button = document.getElementById('copyButton');
+
+                // Mostrar el tooltip manualmente
+                tooltipInstance.show();
+
+                // Ocultar el tooltip después de 2 segundos
+                setTimeout(() => {
+                    tooltipInstance.hide();
+                }, 2000);
+            }).catch((err) => {
+                console.error('Error al copiar al portapapeles:', err);
+            });
+        });
+
     });
 });
 
