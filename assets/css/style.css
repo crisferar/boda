@@ -428,6 +428,7 @@ html, body, .page-wrapper {
 /* THIRD SECTION */
 #third-section {
     background-color: #fafad6;
+    overflow: hidden;
 }
 
 .ceremonia-img {
@@ -483,6 +484,106 @@ html, body, .page-wrapper {
 /* FIN THIRD SECTION */
 
 
+
+/* FOURTH SECTION */
+/* -------------------------- */
+.save_date_section {
+    position: relative;
+    background-image: url(../img/073_ok.jpeg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+  
+.save_date_section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--overlay-color);
+    z-index: 0;
+    /* opacity: 0.8; */
+}
+
+.save_date_section h2.animate-gradient-text {
+    /* text-shadow: 0px 0px 6px #000000; */
+    font-size: 5.5rem;
+}
+  
+.save_date_section:before {
+    background-image: url(../img/golden-left.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 150px;
+    height: 160px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+  
+.save_date_section:after {
+    background-image: url(../img/golden-right.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 140px;
+    height: 173px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+  
+.about_single_sep {
+    display: inline-flex;
+    width: 70px;
+    height: 6px;
+    background: transparent linear-gradient(90deg, #8D6B35 0%, #C9974C 30%, #FCC270 60%, #C9974C 100%) 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+  
+.main-countdown {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+  
+.main-countdown ul {
+    display: inline-flex;
+    list-style-type: none;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-orange-dark);
+    /* font-family: 'Cinzel Decorative', cursive; */
+    font-weight: 600;
+    margin: 0px;
+    padding-left: 0;
+}
+  
+.main-countdown ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    margin: 0;
+    font-size: 25px;
+}
+  
+.main-countdown ul li span {
+    font-size: 100px;
+    font-family: 'Beau Rivage', cursive;
+    color: var(--color-orange-dark);
+    font-weight: 400;
+}
+/* -------------------------- */
+
+/* FIN FOURTH SECTION */
+
 /* Media Queries */
 @media (max-width: 1550px) {
     .hero_text h1 {
@@ -492,6 +593,10 @@ html, body, .page-wrapper {
     .hero_image {
         width: 320px;
         height: 320px;
+    }
+    .main-countdown ul li span,
+    #countdown2 ul li span {
+        font-size: 80px;
     }
 }
   
@@ -509,6 +614,10 @@ html, body, .page-wrapper {
         width: 234px;
         height: 200px;
     } */
+    .main-countdown ul li span,
+    #countdown2 ul li span {
+        font-size: 60px;
+    }
 }
   
 @media (max-width: 1024px) {
@@ -544,6 +653,21 @@ html, body, .page-wrapper {
     .hero_main_image {
         max-width: 70%;
     }  
+
+    .save_date_section:before,
+    .save_date_section::after {
+        width: 90px;
+        height: 110px;
+    }
+    .main-countdown ul li span,
+    #countdown2 ul li span {
+        font-size: 50px;
+    }
+  
+    .main-countdown ul li,
+    #countdown2 ul li {
+        font-size: 20px;
+    }
 }
   
 @media (max-width: 768px) {
@@ -569,14 +693,37 @@ html, body, .page-wrapper {
     /* FIN SECOND SECTION */
     
     /* THIRD SECTION */
-
     /* FIN THIRD SECTION */
+
+    /* FOURTH SECTION */
+    .save_date_section h2.animate-gradient-text {
+        font-size: 3rem;
+    }
+
+    .main-countdown ul li span,
+    #countdown2 ul li span {
+        font-size: 32px;
+    }
+
+    .main-countdown ul,
+    #countdown2 ul {
+        width: 100%;
+    }
+    /* FIN FOURTH SECTION */
 }
   
 @media (max-width: 576px) {
     .hero_image {
         width: 250px;
         height: 250px;
+    }
+    .main-countdown ul li,
+    #countdown2 ul li {
+        font-size: 13px;
+    }
+  
+    .main-countdown ul li {
+        margin: 0 5px;
     }
 }
   
@@ -591,13 +738,13 @@ html, body, .page-wrapper {
         width: 100px;
         height: 100px;
         top: 0;
-        left: -40px;
+        left: -25px;
     }
     .hero_image:after {
         width: 100px;
         height: 100px;
         bottom: 0;
-        right: -50px;
+        right: -35px;
     }
     
     #third-section .ceremonia::before {
@@ -618,3 +765,49 @@ html, body, .page-wrapper {
         font-size: 60px;
     }
 }
+
+/*--------*/
+
+.animate-gradient-text {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #c1b38e, #cdbca2, #dfd0a5);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: gradient 5s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 243, 213, 0.5);
+    -webkit-animation: gradient 5s linear infinite;
+}
+
+.animate-gradient-gray-text {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #818181, #cfcfcf, #818181);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: gradientGray 5s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(129, 129, 129,0.5);
+    -webkit-animation: gradientGray 5s linear infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: -500%;
+    }
+    100% {
+        background-position: 500%;
+    }
+}
+
+
+@keyframes gradientGray {
+    0% {
+        background-position: -500%;
+    }
+    100% {
+        background-position: 500%;
+    }
+}
+/*--------*/

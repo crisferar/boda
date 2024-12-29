@@ -78,7 +78,7 @@ const util = (() => {
 
         audio.play();
         document.getElementById('btn-music').style.display = 'block';
-        // timer();
+        timer();
         
         confetti({
             origin: { y: 0.9 },
