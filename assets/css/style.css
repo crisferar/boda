@@ -466,21 +466,20 @@ html, body, .page-wrapper {
     left: -135px;
 }
 
-/*
 #third-section .celebracion::before {
     content: "";
     position: absolute;
     background-image: url(../img/svg/ceremonia-left-leaf.svg);
     width: 324px;
     height: 328px;
-    /* top: -45px;
+    /* top: -45px; */
     right: -135px;
     transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     -moz-transform: scaleX(-1);
     -ms-transform: scaleX(-1);
     -o-transform: scaleX(-1);
-} */
+}
 /* FIN THIRD SECTION */
 
 
@@ -604,10 +603,9 @@ html, body, .page-wrapper {
     #third-section .ceremonia::before {
         left: -180px;
     }
-    /*
     #third-section .celebracion::before {
         right: -180px;
-    } */
+    }
 }
   
 @media (max-width: 390px) {
