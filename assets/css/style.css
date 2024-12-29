@@ -811,3 +811,8 @@ html, body, .page-wrapper {
     }
 }
 /*--------*/
+
+.gift-icon-box {
+    color: var(--color-green);
+    font-size: 3.5rem;
+}
