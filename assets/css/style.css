@@ -107,6 +107,9 @@ html, body, .page-wrapper {
     background-repeat: no-repeat;
 }
 
+footer {
+    overflow: hidden;
+}
 .footer-content {
     background-image: url(../img/bg.png);
     background-position: center;
