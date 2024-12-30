@@ -107,6 +107,16 @@ html, body, .page-wrapper {
     background-repeat: no-repeat;
 }
 
+.footer-content {
+    background-image: url(../img/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.footer-content h2 {
+    font-size: 5rem;
+}
 /* Inicialmente oculto */
 #main-content, #page-content {
     opacity: 0;
@@ -697,6 +707,9 @@ html, body, .page-wrapper {
 
     /* FOURTH SECTION */
     .save_date_section h2.animate-gradient-text {
+        font-size: 3rem;
+    }
+    .footer-content h2 {
         font-size: 3rem;
     }
 
