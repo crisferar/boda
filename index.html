@@ -105,7 +105,7 @@
                 <!-- Audio Button -->
                 <button type="button" id="btn-music" style="display: none;"
                     class="btn btn-light btn-sm rounded-circle btn-music" onclick="util.music(this)" data-status="true"
-                    data-url="./assets/music/sound2.mp3">
+                    data-url="./assets/music/sound3.mp3">
                     <i class="fa-solid fa-circle-pause spin-button"></i>
                 </button>
 
@@ -527,17 +527,57 @@
                 </section>
 
                 <section id="seventh-section" class="my-5 py-5">
-                    <div class="container">
-                        <div class="row g-0">
-                            <div class="col text-center">
-                                <h2 class="great-vibes text-green display-4">
-                                    Rogamos Confirmar Asistencia
-                                </h2>
-                                <p>
-                                    ¡Ojalá contemos contigo!
-                                    Por favor, pulsa este botón para acceder al formulario de confirmación y así ayudarnos a contabilizar las asistencias.
-                                    ¡Muchas gracias!
-                                </p>
+                      <!-- Video de fondo -->
+                    <div class="bg-video-container position-relative d-flex">
+                        <video autoplay muted loop>
+                        <source src="assets/video/short.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                        <div class="container">
+                            <h2 class="great-vibes text-center text-green display-4">
+                                Confirmar Asistencia
+                            </h2>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <div class="row g-0">
+                                    <div class="col-12 col-md-6 d-flex align-items-center justify-content-center text-center pe-md-4">
+                                        <p>
+                                            ¡Ojalá contemos contigo!<br />
+                                            Por favor, completa el formulario para confirmar tu asistencia y darnos algunos detalles.<br />
+                                            ¡Muchas gracias!
+                                        </p>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <form class="registration-form">
+                                            <label class="col-one-half">
+                                                <span class="label-text">Nombre</span>
+                                                <input type="text" name="firstname">
+                                            </label>
+                                            <label class="col-one-half">
+                                                <span class="label-text">Apellidos</span>
+                                                <input type="text" name="lastName">
+                                            </label>
+                                            <label>
+                                                <span class="label-text">Email</span>
+                                                <input type="text" name="email">
+                                            </label>
+                                            <label>
+                                                <span class="label-text">Número de Acompañantes</span>
+                                                <input type="number" id="guests" name="guests" min="0" max="10">
+                                            </label>
+                                            <label>
+                                                <span class="label-text">¿Restricciones Alimentarias?</span>
+                                                <textarea id="message" name="message" rows="5" placeholder="Escribe las restricciones..."></textarea>
+                                            </label>
+                                            <!-- <label class="checkbox">
+                                                <input type="checkbox" name="newsletter">
+                                                <span>Sign me up for the weekly newsletter.</span>
+                                            </label> -->
+                                            <div class="text-center">
+                                                <button class="submit" name="register">Enviar</button>
+                                            </div>
+                                        </form>                                
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
