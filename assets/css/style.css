@@ -627,22 +627,21 @@ footer {
 	transform: translate(-50%, -50%);
 	padding: 2em;
 	position: absolute;
-		top: 50%;
-		left: 50%;
-		z-index: 1;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
 	width: 98%;
 }
 #seventh-section .container:before{
-	/* background: url('http://tfgms.com/sandbox/dailyui/bg-1.jpg') center no-repeat; */
 	background-size: cover;
 	content: '';
 	-webkit-filter: blur(10px);
 	filter: blur(10px);
 	height: 100vh;
 	position: absolute;
-		top: 50%;
-		left: 50%;
-		z-index: -1;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
 	-webkit-transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);

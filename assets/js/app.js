@@ -46,6 +46,31 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
+        // Enviar Formulario
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbykYagF_y6QvrKjDRvyxfys3RmAwxZGySd_FZ_EjhN1fC-TbrVeYNgo-JqXPWThDdLI6A/exec';
+
+        document.getElementById('confirm-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const data = {};
+            formData.forEach((value, key) => data[key] = value);
+            console.log(data);
+            try {
+                const response = await fetch(scriptURL, {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                alert('Formulario enviado exitosamente.');
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al enviar el formulario.');
+            }
+        });
+
     });
 });
 
