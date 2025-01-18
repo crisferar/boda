@@ -548,23 +548,45 @@
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <form id="confirm-form" class="registration-form">
-                                            <label class="col-one-half">
+                                            <label class="col-one-half label-title">
                                                 <span class="label-text">Nombre</span>
                                                 <input type="text" name="firstname">
                                             </label>
-                                            <label class="col-one-half">
+                                            <label class="col-one-half label-title">
                                                 <span class="label-text">Apellidos</span>
                                                 <input type="text" name="lastname">
                                             </label>
-                                            <label>
+                                            <label class="label-title">
                                                 <span class="label-text">Email</span>
                                                 <input type="text" name="email">
                                             </label>
-                                            <label>
+                                            <label class="label-title">
                                                 <span class="label-text">Número de Acompañantes</span>
                                                 <input type="number" id="guests" name="num_guests" min="0" max="10">
                                             </label>
-                                            <label>
+                                            <label class="col-one-half label-title">
+                                                <span class="label-text">¿Te quedas a dormir?</span>
+                                                <div class="d-flex align-items-center justify-content-evenly">
+                                                    <label>
+                                                        <input class="w-unset" type="radio" name="stay_overnight" value="Sí" required> Sí
+                                                    </label>
+                                                    <label>
+                                                        <input class="w-unset" type="radio" name="stay_overnight" value="No" required> No
+                                                    </label>
+                                                </div>
+                                            </label>
+                                            <label class="col-one-half label-title">
+                                                <span class="label-text">¿Te llevamos en bus?</span>
+                                                <div class="d-flex align-items-center justify-content-evenly">
+                                                    <label>
+                                                        <input class="w-unset" type="radio" name="bus_transport" value="Sí" required> Sí
+                                                    </label>
+                                                    <label>
+                                                        <input class="w-unset" type="radio" name="bus_transport" value="No" required> No
+                                                    </label>
+                                                </div>
+                                            </label>
+                                            <label class="label-title">
                                                 <span class="label-text">¿Restricciones Alimentarias?</span>
                                                 <textarea id="message" name="message" rows="3" placeholder="Escribe las restricciones..."></textarea>
                                             </label>
@@ -573,7 +595,10 @@
                                                 <span>Sign me up for the weekly newsletter.</span>
                                             </label> -->
                                             <div class="text-center">
-                                                <button class="submit" name="register">Enviar</button>
+                                                <button class="submit btn btn-lg shadow rounded-4" name="register">
+                                                    <i class="fa-regular fa-paper-plane me-2"></i>
+                                                    Enviar
+                                                </button>
                                             </div>
                                         </form>
                                     </div>
