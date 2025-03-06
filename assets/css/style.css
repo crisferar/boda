@@ -46,26 +46,26 @@ html, body, .page-wrapper {
 } */
 
 /* Cambiar el color del thumb cuando está activo (dragging) */
-/* ::-webkit-scrollbar-thumb:active { 
+/* ::-webkit-scrollbar-thumb:active {
     background: #333;
 } */
 
 .text-invitation {
     color: var(--color-invitation);
 }
-  
+
 .text-green {
     color: var(--color-green);
 }
-  
+
 .text-orange {
     color: var(--color-orange);
 }
-  
+
 .text-orange-dark {
     color: var(--color-orange-dark);
 }
-  
+
 .text-gris {
     color: var(--color-light-grey);
 }
@@ -159,6 +159,16 @@ footer {
     z-index: 1055 !important;
 }
 
+@-webkit-keyframes spin-icon {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes spin-icon {
     from {
         transform: rotate(0deg);
@@ -170,16 +180,34 @@ footer {
 }
 
 .spin-button {
-    animation: spin-icon 5s linear infinite;
+    -webkit-animation: spin-icon 5s linear infinite;
+            animation: spin-icon 5s linear infinite;
 }
 
 /* Define las animaciones */
+@-webkit-keyframes rotate-right {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
 @keyframes rotate-right {
     0% {
       transform: rotate(0deg);
     }
     100% {
       transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotate-left {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
     }
 }
 
@@ -194,13 +222,15 @@ footer {
 
   /* Estilo para el primer path (rota hacia la derecha) */
 #path1 {
-    animation: rotate-right 4s linear infinite; /* Rotación completa en 4 segundos */
+    -webkit-animation: rotate-right 4s linear infinite;
+            animation: rotate-right 4s linear infinite; /* Rotación completa en 4 segundos */
     transform-origin: 50% 50%; /* Punto de rotación centrado */
 }
 
   /* Estilo para el segundo path (rota hacia la izquierda) */
 #path2 {
-    animation: rotate-left 4s linear infinite; /* Rotación completa en dirección opuesta */
+    -webkit-animation: rotate-left 4s linear infinite;
+            animation: rotate-left 4s linear infinite; /* Rotación completa en dirección opuesta */
     transform-origin: 50% 50%;
 }
 
@@ -208,32 +238,28 @@ footer {
 .text-orange-dark {
     color: var(--color-orange-dark) !important;
 }
-  
+
   /* CSS */
 .hero_text h1 {
     font-size: 210px; /* Changed */
     margin-bottom: 0;
 }
-    
+
 .hero_main_image {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     /* width: 80%;
         max-width: 90%; Combined */
     margin: auto; /* Combined */
 }
-  
+
 .hero_image {
     width: 400px;
     margin: auto;
     height: 400px;
     z-index: 2;
 }
-  
+
 .hero_image img {
     width: 100%;
     -o-object-fit: cover;
@@ -246,7 +272,7 @@ footer {
     z-index: 9;
     height: 100%;
 }
-  
+
 .image-ring svg {
     position: absolute;
     width: 100%;
@@ -260,18 +286,14 @@ footer {
 .hero_text h1 {
     color: var(--color-orange-dark);
 }
-  
+
 .hero_main_image,
 .hero_text {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     justify-content: center;
 }
-  
+
   /* Pseudo-elements */
 .hero_image:before,
 .hero_image:after {
@@ -280,7 +302,7 @@ footer {
     width: 235px;
     height: 238px;
 }
-  
+
 .hero_image:before {
     background-image: url(../img/svg/flowers-left.svg);
     position: absolute;
@@ -289,7 +311,7 @@ footer {
     top: -50px;
     left: -110px;
 }
-  
+
 .hero_image:after {
     background-image: url(../img/svg/flowers-right.svg);
     position: absolute;
@@ -301,11 +323,7 @@ footer {
 
 .hero_text,
 .hero_main_image {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -314,14 +332,14 @@ footer {
     color: var(--color-orange-dark);
     margin-bottom: 0;
 }
-  
+
 .hero_image {
     width: 400px;
     margin: auto;
     height: 400px;
     z-index: 2;
 }
-  
+
 .hero_image img {
     width: 100%;
     -o-object-fit: cover;
@@ -336,7 +354,7 @@ footer {
     );
     height: 100%;
 }
-  
+
 .container-section {
     display: flex;
     flex-direction: column;
@@ -365,19 +383,9 @@ footer {
     background: url('/assets/img/033_ok_v3.jpeg') no-repeat center/cover;
     background-position: center right;
     background-size: cover;
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(rgba(0, 0, 0, 0.3)),
-        to(rgba(0, 0, 0, 0))
-      ),
-      url(../img/033_ok_v3.jpeg);
-    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
-      url(../img/033_ok_v3.jpeg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
       url(../img/033_ok_v3.jpeg);
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
 }
 
 
@@ -385,12 +393,12 @@ footer {
     font-size: calc(3.8rem + 1.5vw);
     margin-bottom: 0;
 }
-  
+
 #portada h2 {
     font-size: calc(4.6rem + 1.5vw);
     margin-bottom: 0;
 }
-  
+
 /* #portada #portada-text {
     margin-left: 10%;
 } */
@@ -412,13 +420,13 @@ footer {
     z-index: -1;
     background-size: contain;
 }
-  
+
 #second-section img {
     width: 75%;
     /* filter: drop-shadow(0px 0px 6px var(--overlay-color));
     -webkit-filter: drop-shadow(0px 0px 6px var(--overlay-color)); */
 }
-  
+
 #second-section .image-overlay {
     position: absolute;
     bottom: -2px;
@@ -427,7 +435,7 @@ footer {
     background: linear-gradient(to top, white, transparent);
     height: 40%; /* Ajusta esto para cambiar el tamaño del overlay */
 }
-  
+
 #second-section .day-number {
     font-size: 10rem;
     font-weight: bold;
@@ -456,7 +464,8 @@ footer {
 #third-section .ceremonia-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     display: block;
     border-radius: 20px;
     max-height: 400px;
@@ -506,8 +515,13 @@ footer {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+    /* Quitar background-attachment: fixed para iOS */
+    background-attachment: scroll;
+    /* Añadir prefijo para Safari */
+    background-size: cover;
+    -webkit-background-size: cover;
 }
-  
+
 .save_date_section .overlay {
     position: absolute;
     top: 0;
@@ -517,13 +531,26 @@ footer {
     background: var(--overlay-color);
     z-index: 0;
     /* opacity: 0.8; */
+    /* Asegurar que cubre toda la sección */
+    width: 100%;
+    height: 100%;
+    /* Mejorar rendimiento */
+    will-change: transform;
 }
+
+/* Ajustar pseudo-elementos para iOS */
+.save_date_section:before,
+.save_date_section:after {
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
 
 .save_date_section h2.animate-gradient-text {
     /* text-shadow: 0px 0px 6px #000000; */
     font-size: 5.5rem;
 }
-  
+
 .save_date_section:before {
     background-image: url(../img/golden-left.png);
     background-repeat: no-repeat;
@@ -536,7 +563,7 @@ footer {
     left: 0;
     z-index: 1;
 }
-  
+
 .save_date_section:after {
     background-image: url(../img/golden-right.png);
     background-repeat: no-repeat;
@@ -548,7 +575,7 @@ footer {
     bottom: 0;
     right: 0;
 }
-  
+
 .about_single_sep {
     display: inline-flex;
     width: 70px;
@@ -558,13 +585,13 @@ footer {
     margin-bottom: 15px;
     margin-top: 15px;
 }
-  
+
 .main-countdown {
     text-align: center;
     display: flex;
     justify-content: center;
 }
-  
+
 .main-countdown ul {
     display: inline-flex;
     list-style-type: none;
@@ -577,7 +604,7 @@ footer {
     margin: 0px;
     padding-left: 0;
 }
-  
+
 .main-countdown ul li {
     display: flex;
     flex-direction: column;
@@ -586,7 +613,7 @@ footer {
     margin: 0;
     font-size: 25px;
 }
-  
+
 .main-countdown ul li span {
     font-size: 100px;
     font-family: 'Beau Rivage', cursive;
@@ -613,7 +640,8 @@ footer {
     transform: translate(-50%, -50%);
     min-width: 100%;
     min-height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     z-index: -1; /* Asegura que el video esté detrás del contenido */
 }
 
@@ -622,8 +650,6 @@ footer {
 	box-shadow: 0 0 1em 0 rgba(51,51,51,0.25);
 	display: block;
 	overflow: auto;
-	-webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	padding: 2em;
 	position: absolute;
@@ -650,7 +676,6 @@ form button.submit {
 	border: 1px solid #333;
 	line-height: 1em;
 	padding: 0.5em 0.5em;
-	-webkit-transition: all 0.25s;
 	transition: all 0.25s;
 }
 
@@ -665,7 +690,7 @@ form button.loading {
 
 form button.success {
 	background: #27ae60;
-	border-color: #27ae60; 
+	border-color: #27ae60;
 	color: #fff;
 }
 
@@ -694,7 +719,6 @@ form label.label-title {
 	display: block;
 	font-size: 1.25em;
 	margin-bottom: 0.5em;
-	-webkit-transition: all 0.25s;
 	transition: all 0.25s;
 }
 
@@ -731,7 +755,6 @@ form label.label-title span.label-text {
 	font-weight: bold;
 	padding-left: 0.5em;
 	text-transform: uppercase;
-	-webkit-transition: all 0.25s;
 	transition: all 0.25s;
 }
 
@@ -790,13 +813,13 @@ form label.invalid span.label-text{color: #c0392b;}
         font-size: 80px;
     }
 }
-  
+
 @media (max-width: 1440px) {
     .hero_text h1 {
         font-size: 110px;
     }
 }
-  
+
 @media (max-width: 1280px) {
     #second-section img {
         width: 90%;
@@ -810,24 +833,24 @@ form label.invalid span.label-text{color: #c0392b;}
         font-size: 60px;
     }
 }
-  
+
 @media (max-width: 1024px) {
     .hero_text h1 {
         font-size: 100px;
     }
-  
+
     .hero_image {
         width: 300px;
         height: 300px;
     }
-  
+
     .hero_image:before {
         width: 150px;
         height: 150px;
         top: -25px;
         left: -70px;
     }
-  
+
     .hero_image:after {
         width: 150px;
         height: 150px;
@@ -835,15 +858,15 @@ form label.invalid span.label-text{color: #c0392b;}
         right: -85px;
     }
 }
-  
+
 @media (max-width: 991px) {
     .hero_text h1 {
         font-size: 80px;
     }
-    
+
     .hero_main_image {
         max-width: 70%;
-    }  
+    }
 
     .save_date_section:before,
     .save_date_section::after {
@@ -854,19 +877,19 @@ form label.invalid span.label-text{color: #c0392b;}
     #countdown2 ul li span {
         font-size: 50px;
     }
-  
+
     .main-countdown ul li,
     #countdown2 ul li {
         font-size: 20px;
     }
 }
-  
+
 @media (max-width: 768px) {
     /* PORTADA */
     #portada h1 {
         font-size: calc(2.6rem + 1vw);
     }
-    
+
     #portada h2 {
         font-size: calc(3.2rem + 1vw);
     }
@@ -882,7 +905,7 @@ form label.invalid span.label-text{color: #c0392b;}
         width: 60%;
     }
     /* FIN SECOND SECTION */
-    
+
     /* THIRD SECTION */
     /* FIN THIRD SECTION */
 
@@ -905,7 +928,7 @@ form label.invalid span.label-text{color: #c0392b;}
     }
     /* FIN FOURTH SECTION */
 }
-  
+
 @media (max-width: 576px) {
     .hero_image {
         width: 250px;
@@ -915,12 +938,12 @@ form label.invalid span.label-text{color: #c0392b;}
     #countdown2 ul li {
         font-size: 13px;
     }
-  
+
     .main-countdown ul li {
         margin: 0 5px;
     }
 }
-  
+
 @media (max-width: 480px) {
     .hero_image {
         width: 100%;
@@ -940,7 +963,7 @@ form label.invalid span.label-text{color: #c0392b;}
         bottom: 0;
         right: -35px;
     }
-    
+
     #third-section .ceremonia::before {
         left: -180px;
     }
@@ -948,13 +971,13 @@ form label.invalid span.label-text{color: #c0392b;}
         right: -180px;
     }
 }
-  
+
 @media (max-width: 390px) {
     /* .hero_image {
       width: 150px;
       height: 150px;
     } */
-  
+
     .hero_text h1 {
         font-size: 60px;
     }
@@ -986,7 +1009,26 @@ form label.invalid span.label-text{color: #c0392b;}
     -webkit-animation: gradientGray 5s linear infinite;
 }
 
+@-webkit-keyframes gradient {
+    0% {
+        background-position: -500%;
+    }
+    100% {
+        background-position: 500%;
+    }
+}
+
 @keyframes gradient {
+    0% {
+        background-position: -500%;
+    }
+    100% {
+        background-position: 500%;
+    }
+}
+
+
+@-webkit-keyframes gradientGray {
     0% {
         background-position: -500%;
     }
