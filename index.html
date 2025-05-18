@@ -619,12 +619,12 @@
                             Tu navegador no soporta el video.
                         </video>
                         <div class="container">
-                            <h2 class="great-vibes text-center text-green display-4">
-                                Confirmar Asistencia
-                            </h2>
                             <div class="d-flex align-items-center justify-content-center">
                                 <div class="row g-0">
-                                    <div class="col-12 col-md-6 d-flex align-items-center justify-content-center text-center pe-md-4">
+                                    <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center text-center pe-md-4">
+                                        <h2 class="great-vibes text-center text-green display-4">
+                                            Confirmar Asistencia
+                                        </h2>
                                         <p>
                                             ¡Ojalá contemos contigo!<br />
                                             Por favor, completa el formulario para confirmar tu asistencia y darnos algunos detalles.<br />
@@ -649,21 +649,13 @@
                                                 <span class="label-text">Número de Acompañantes</span>
                                                 <input type="number" id="guests" name="num_guests" min="0" max="10">
                                             </label>
-                                            <label class="col-one-half label-title">
-                                                <span class="label-text">¿Te quedas a dormir?</span>
-                                                <div class="d-flex align-items-center justify-content-evenly">
-                                                    <label>
-                                                        <input class="w-unset" type="radio" name="stay_overnight" value="Sí" required> Sí
-                                                    </label>
-                                                    <label>
-                                                        <input class="w-unset" type="radio" name="stay_overnight" value="No" required> No
-                                                    </label>
-                                                </div>
-                                            </label>
-                                            <label class="col-one-half label-title">
+
+
+                                            <label class="label-title d-flex flex-column flex-md-row align-items-start align-items-md-center pb-2">
                                                 <span class="label-text">¿Te llevamos en bus?</span>
+
                                                 <div class="d-flex align-items-center justify-content-evenly">
-                                                    <label>
+                                                    <label class="me-3 ms-md-3">
                                                         <input class="w-unset" type="radio" name="bus_transport" value="Sí" required> Sí
                                                     </label>
                                                     <label>
@@ -671,9 +663,12 @@
                                                     </label>
                                                 </div>
                                             </label>
+
+
+
                                             <label class="label-title">
-                                                <span class="label-text">¿Restricciones Alimentarias?</span>
-                                                <textarea id="message" name="message" rows="3" placeholder="Escribe las restricciones..."></textarea>
+                                                <span class="label-text">¿Observaciones o Restricciones Alimentarias?</span>
+                                                <textarea id="message" name="message" rows="3" placeholder="Escribe aquí..."></textarea>
                                             </label>
                                             <!-- <label class="checkbox">
                                                 <input type="checkbox" name="newsletter">

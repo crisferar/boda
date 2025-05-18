@@ -751,7 +751,7 @@ form label.label-title input:-webkit-autofill {
 
 form label.label-title span.label-text {
 	display: block;
-	font-size: 0.5em;
+	font-size: 0.65em;
 	font-weight: bold;
 	padding-left: 0.5em;
 	text-transform: uppercase;
