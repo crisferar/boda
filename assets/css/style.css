@@ -1057,7 +1057,7 @@ form label.invalid span.label-text{color: #c0392b;}
 
 /* SLIDER HOTELS */
 .slider-container {
-    max-width: 1200px;
+    /* max-width: 1200px; */
     width: 100%;
     position: relative;
 }
