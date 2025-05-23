@@ -16,6 +16,56 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 2000,
     });
 
+    // Inicializar Swiper
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: -30,
+      loop: true,
+      grabCursor: true,
+      centeredSlides: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      effect: "coverflow",
+      coverflowEffect: {
+        rotate: 20,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 1.5,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 50,
+        },
+      },
+    });
+
+    // Pausa el autoplay cuando el mouse está sobre el slider
+    const swiperContainer = document.querySelector(".swiper");
+    swiperContainer.addEventListener("mouseenter", () => {
+      swiper.autoplay.stop();
+    });
+
+    swiperContainer.addEventListener("mouseleave", () => {
+      swiper.autoplay.start();
+    });
+
     // Inicializar todos los tooltips en la página
     const tooltips = document.querySelectorAll('[data-toggle="tooltip"]');
     tooltips.forEach(function (tooltipElement) {
