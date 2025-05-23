@@ -1149,7 +1149,7 @@ form label.invalid span.label-text{color: #c0392b;}
 .hotel-description {
     font-size: 1rem;
     margin-bottom: 25px;
-    opacity: 0.8;
+    opacity: 0.9;
     line-height: 1.4;
 }
 
