@@ -105,24 +105,32 @@ document.addEventListener("DOMContentLoaded", () => {
     timeline(document.querySelectorAll(".timeline"), {
       forceVerticalMode: 992,
       mode: "horizontal",
-      visibleItems: 6,
+      visibleItems: 5,
+    });
+
+    timeline(document.querySelectorAll(".vuelta"), {
+      forceVerticalMode: 992,
+      mode: "horizontal",
+      visibleItems: 3,
     });
 
     // Enviar Formulario
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycby5YMw7iSaNq5JkwMX8BJnuphmfTxq8KzXcaLg1CKj0lhJ_ixTxearEvLYAZHleLsubWw/exec";
+      // "https://script.google.com/macros/s/AKfycby5YMw7iSaNq5JkwMX8BJnuphmfTxq8KzXcaLg1CKj0lhJ_ixTxearEvLYAZHleLsubWw/exec";
+      "https://script.google.com/macros/s/AKfycbykKlKFvAkW1xQ6sy8vydTrgo9DKQwSA-nP_-QEGOvhBcsn_6ChRMAmILa7sHQyk3iBjQ/exec";
 
     const form = document.forms["confirm-form"];
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
       const formData = new FormData(form);
+      console.log(formData);
       try {
         const response = await fetch(scriptURL, {
           method: "POST",
           body: formData,
         });
-        alert("Formulario enviado exitosamente.");
+        alert("Formulario enviado correctamente.");
       } catch (error) {
         console.error("Error:", error);
         alert("Error al enviar el formulario.");

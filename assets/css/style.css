@@ -1273,3 +1273,49 @@ form label.invalid span.label-text{color: #c0392b;}
         font-size: 1.5rem;
     }
 }
+
+
+/* TIMELINE */
+/* .timeline .time {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+} */
+
+.timeline .location {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.timeline .description {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+.timeline .highlight {
+    /* background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%); */
+    /* padding: 20px; */
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.timeline .walking-info {
+    background: rgba(46, 204, 113, 0.1);
+    border-left: 4px solid #2ecc71;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.timeline .transport-info {
+    background: rgba(52, 152, 219, 0.1);
+    border-left: 4px solid #3498db;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
