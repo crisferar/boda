@@ -114,26 +114,81 @@ document.addEventListener("DOMContentLoaded", () => {
       visibleItems: 3,
     });
 
-    // Enviar Formulario
+    // Enviar Formulario - VERSIÓN MEJORADA
     const scriptURL =
-      // "https://script.google.com/macros/s/AKfycby5YMw7iSaNq5JkwMX8BJnuphmfTxq8KzXcaLg1CKj0lhJ_ixTxearEvLYAZHleLsubWw/exec";
       "https://script.google.com/macros/s/AKfycbykKlKFvAkW1xQ6sy8vydTrgo9DKQwSA-nP_-QEGOvhBcsn_6ChRMAmILa7sHQyk3iBjQ/exec";
 
     const form = document.forms["confirm-form"];
+    let isSubmitting = false; // Variable para controlar si ya se está enviando
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
+      // Evitar envíos múltiples
+      if (isSubmitting) {
+        return;
+      }
+
+      isSubmitting = true;
+
+      // Obtener el botón de envío
+      const submitButton = form.querySelector('button[name="register"]');
+      const originalButtonText = submitButton.innerHTML;
+
+      // Deshabilitar el botón y cambiar el texto
+      submitButton.disabled = true;
+      submitButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i>Enviando...';
+
       const formData = new FormData(form);
       console.log(formData);
+
       try {
         const response = await fetch(scriptURL, {
           method: "POST",
           body: formData,
         });
-        alert("Formulario enviado correctamente.");
+
+        if (response.ok) {
+          // Éxito - cambiar botón a estado de éxito
+          submitButton.innerHTML = '<i class="fa-solid fa-check me-2"></i>¡Enviado!';
+          submitButton.classList.remove('btn-warning');
+          submitButton.classList.add('btn-success');
+
+          // Mostrar mensaje de éxito
+          alert("¡Formulario enviado correctamente! Gracias por confirmar tu asistencia.");
+
+          // Limpiar el formulario
+          form.reset();
+
+          // Restaurar botón después de 3 segundos
+          setTimeout(() => {
+            submitButton.innerHTML = originalButtonText;
+            submitButton.classList.remove('btn-success');
+            submitButton.classList.add('btn-warning');
+            submitButton.disabled = false;
+            isSubmitting = false;
+          }, 3000);
+        } else {
+          throw new Error('Error en la respuesta del servidor');
+        }
       } catch (error) {
         console.error("Error:", error);
-        alert("Error al enviar el formulario.");
+
+        // Error - cambiar botón a estado de error
+        submitButton.innerHTML = '<i class="fa-solid fa-times me-2"></i>Error';
+        submitButton.classList.remove('btn-warning');
+        submitButton.classList.add('btn-danger');
+
+        alert("Error al enviar el formulario. Por favor, inténtalo de nuevo.");
+
+        // Restaurar botón después de 3 segundos
+        setTimeout(() => {
+          submitButton.innerHTML = originalButtonText;
+          submitButton.classList.remove('btn-danger');
+          submitButton.classList.add('btn-warning');
+          submitButton.disabled = false;
+          isSubmitting = false;
+        }, 3000);
       }
     });
   });
