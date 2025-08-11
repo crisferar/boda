@@ -140,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
       submitButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i>Enviando...';
 
       const formData = new FormData(form);
-      console.log(formData);
 
       try {
         const response = await fetch(scriptURL, {
@@ -241,6 +240,8 @@ const util = (() => {
 
   const init = async (button) => {
     button.disabled = true;
+    // Subir al inicio antes de cualquier otra acción
+    window.scrollTo({ top: 0, behavior: 'instant' });
     // document.documentElement.style.overflow = 'auto';
     document.body.style.overflow = "auto"; // o 'scroll'
     // document.documentElement.style.overflowX = 'hidden';
